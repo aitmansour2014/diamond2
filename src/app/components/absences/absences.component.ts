@@ -40,7 +40,7 @@ export class AbsencesComponent implements OnInit{
   {value: 'MALADIE', viewValue: 'Maladie'},
   {value: 'VACANCE', viewValue: 'Vacance'},
   {value: 'TRAVAIL', viewValue: 'Travail'},
-  {value: 'ÉVÉNEMENT FAMILIAL', viewValue: 'Événement Familial'},
+  {value: 'ÉVÉNEMENT FAMILIAL', viewValue: 'Événement Familial'}
 ];
 
   absences: Absences[] = [{ 

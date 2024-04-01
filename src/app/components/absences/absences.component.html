@@ -20,11 +20,10 @@
           <div class="card-text">
             <mat-form-field class="form__group fieldmt-2">
               <mat-label>Catégorie de l'absence</mat-label>
-              <mat-select  #categorie class=" form__field">
-                @for (categorie of categorieAbbsence; track categorie) {
-                  <mat-option class="button-48" [value]="categorie.value">{{categorie.viewValue}}</mat-option>
-                }
+              <mat-select #categorie >
+                <mat-option *ngFor="let categorie of categorieAbbsence" [value]="categorie.value">{{categorie.viewValue}}</mat-option>
               </mat-select>
+              
             </mat-form-field>
           
           <!-- <p class="card-text">
