@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Absences } from '../../model/absences.model';
 import { NgFor, NgIf } from '@angular/common';
 import { SharedModuleModule } from '../../shared-module/shared-module.module';
 import dayGridPlugin from '@fullcalendar/daygrid'; // Importez le plugin dayGrid
@@ -42,7 +43,7 @@ export class AbsencesComponent implements OnInit{
   {value: 'ÉVÉNEMENT FAMILIAL', viewValue: 'Événement Familial'},
 ];
 
-  absences: any[] = [{ 
+  absences: Absences[] = [{ 
     id: 1,
     idHostesse: 1,
     dateStart: "2024-03-06T15:48:59",
@@ -212,7 +213,7 @@ export class AbsencesComponent implements OnInit{
     this.checkAvailability()
   }
    // Méthode pour convertir les disponibilités en format d'événement attendu par FullCalendar
-   convertirDisponibilitesEnEvenements(absences: any[]): any[] {
+   convertirDisponibilitesEnEvenements(absences: Absences[]): any[] {
     return absences.map(absence => ({
       title: absence.category+" : " + absence.reason,
       start:  absence.dateStart,

@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
 
+import { Absences } from '../model/absences.model';
+
 @Injectable({
   providedIn: 'root'
 })
 export class CheckAvailibilityHostessService {
 
-  absences: any[] = [
+  absences: Absences[] = [
     { 
       id: 1,
       idHostesse: 1,
