@@ -1,0 +1,79 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+// Your custom styles here
+.mat-horizontal-stepper-header .mat-step-icon {
+  height: 50px;
+  width: 50px;
+  transition: all 0.5s ease-in-out;
+  outline: 2px solid #BFB274;
+  outline-offset: 2px;
+}
+.mat-horizontal-stepper-header .mat-step-icon-selected {
+  height: 50px;
+  width: 50px;
+  transition: all 0.5s ease-in-out;
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+/* Change stepper Step Edit Icon Circle Image (edit mode)*/
+.mat-horizontal-stepper-header .mat-step-icon-state-edit {
+ background-color: chartreuse;
+ background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/White_check.svg/32px-White_check.svg.png");
+ background-size: 25px;
+ background-position-Y: 10px;
+ background-position-x: 13px;
+ transform: rotate(20deg);
+ background-repeat: no-repeat;
+ outline: 2px solid #fff;
+ outline-offset: 2px;
+}
+/* Change stepper Step Edit Icon Circle Image (done mode)*/
+.mat-horizontal-stepper-header .mat-step-icon-state-done {
+ background-color: chartreuse;
+ background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/White_check.svg/32px-White_check.svg.png");
+ background-size: 25px;
+ background-position-Y: 10px;
+ background-position-x: 13px;
+ transform: rotate(20deg);
+ background-repeat: no-repeat;
+ outline: 2px solid #fff;
+ outline-offset: 2px;
+}
+.mat-step-icon-content{
+  font-size: 35px;
+}
+
+
+
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$DimondG-primary: mat.define-palette(mat.$indigo-palette);
+$DimondG-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$DimondG-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$DimondG-theme: mat.define-light-theme((
+  color: (
+    primary: $DimondG-primary,
+    accent: $DimondG-accent,
+    warn: $DimondG-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($DimondG-theme);
