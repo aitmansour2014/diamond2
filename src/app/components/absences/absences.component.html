@@ -18,20 +18,28 @@
         <div class="card-body">
           
           <div class="card-text">
-            <mat-form-field class="form__group fieldmt-2">
+            <!-- <mat-form-field class="form__group fieldmt-2">
               <mat-label>Catégorie de l'absence</mat-label>
               <mat-select #categorie >
                 <mat-option *ngFor="let categorie of categorieAbbsence" [value]="categorie.value">{{categorie.viewValue}}</mat-option>
               </mat-select>
               
-            </mat-form-field>
-          
-          <!-- <p class="card-text">
-            <mat-form-field class="example-full-width">
-              <mat-label>Raison</mat-label>
-              <input matInput placeholder="Meeting" #raison>
-            </mat-form-field>
-          </p> -->
+              <select class="form-select" aria-label="Default select example">
+  <option selected>Open this select menu</option>
+  <option value="1">One</option>
+  <option value="2">Two</option>
+  <option value="3">Three</option>
+</select>
+            </mat-form-field> -->
+            <div class="form-group mt-2 text-start">
+              <label class=" mylabel mt-4 mb-2 ml-2" for="categorie">Catégorie de l'absence</label>
+              <select class="form-select" id="categorie" #categorie>
+                <option selected>Open this select menu</option>
+                <option *ngFor="let categorie of categorieAbbsence" [value]="categorie.value">{{categorie.viewValue}}</option>
+              </select>
+            </div>
+            
+     
           <div class="m-auto formw__group field mt-2 ms-2  mb-3 " style="width: 97%;">
           
             <input matInput class="formw__field " placeholder="Meeting" #raison>
@@ -51,17 +59,7 @@
           </div>
           <button (click)="ajouterAbsence(dateDebut.value, dateFin.value, raison.value , categorie.value)" class="button-48 mt-2 dgcard-footer">ajouter</button>
         </div>
-          <!-- <h2 class="card-title my-3" >Date de début</h2>
-          <p class="card-text">
-            
-            <input type="datetime-local" #dateDebut required></p>
-            
-          <h2 class="card-title my-3" >Date de Fin</h2>
-            <p class="card-text">
-              
-              <input type="datetime-local" #dateFin required></p>
-      
-          <a  (click)="ajouterAbsence(dateDebut.value, dateFin.value, raison.value , categorie.value)" class="btn btn-primary my-3">Ajouter</a> -->
+         
         </div>
       
       </div>

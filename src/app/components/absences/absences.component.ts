@@ -46,26 +46,26 @@ export class AbsencesComponent implements OnInit{
   absences: Absences[] = [{ 
     id: 1,
     idHostesse: 1,
-    dateStart: "2024-03-06T15:48:59",
-    dateEnd: "2024-03-07T15:48:59",
+    dateStart: "2024-04-03T15:48:59",
+    dateEnd: "2024-04-07T15:48:59",
     category: "booking",
-    reason: "Salam Aleicom " 
+    reason: "event" 
   },
   { 
     id: 2,
     idHostesse: 1,
-    dateStart: "2024-03-08T15:48:59",
-    dateEnd: "2024-03-09T15:48:59",
-    category: " ",
-    reason: "aaa " 
+    dateStart: "2024-04-04T15:48:59",
+    dateEnd: "2024-04-09T15:48:59",
+    category: "Événement Familial ",
+    reason: "Mariage " 
   },
   { 
     id:3,
     idHostesse: 1,
-    dateStart: "2024-03-10T15:48:59",
-    dateEnd: "2024-03-11T15:48:59",
-    category: " ",
-    reason: " bbbb" 
+    dateStart: "2024-04-02T15:48:59",
+    dateEnd: "2024-04-11T15:48:59",
+    category: "Travail ",
+    reason: " Mission" 
   }];
 
   constructor(private elementRef: ElementRef, private datePipe: DatePipe, private checkAvailibilityHostessService: CheckAvailibilityHostessService) {
